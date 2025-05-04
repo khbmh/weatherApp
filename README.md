@@ -77,8 +77,8 @@ Here’s an overview of the main project structure:
 src/
 ├── assets/                       # Static assets like images, fonts, icons, etc.
 ├── components/                   # React components
-│   ├── DarkModeToggle.tsx         # Component for toggling dark mode
-│   ├── Footer.tsx                # Footer component, likely contains app info and copyright
+│   ├── DarkModeToggle.tsx        # Component for toggling dark mode
+│   ├── Footer.tsx                # Footer component, portfolio linked
 │   ├── SearchBar.tsx             # Component for searching cities and displaying weather
 │   ├── WeatherDisplay.tsx        # Component that shows current weather details
 │   ├── WeatherIcon.tsx           # Component that displays weather icons based on conditions
@@ -94,12 +94,5 @@ src/
 
 ```
 
-## Code Implementation
 
-### `.env.local` Example
-
-In your `.env.local` file, store your OpenWeatherMap API key like so:
-
-```env
-VITE_API_KEY=your-openweathermap-api-key-here
 ```
