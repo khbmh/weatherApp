@@ -1,5 +1,3 @@
-Got it! Below is the entire README file, including all the setup, code, and instructions, all in a single `.md` file:
-
 # Weather App
 
 A responsive weather application built with **React.js**, **TypeScript**, **Redux**, and **Tailwind CSS**. This app displays real-time weather data for cities around the world, including temperature, weather conditions, wind speed, and more.
