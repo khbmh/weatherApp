@@ -4,6 +4,7 @@ import { RootState } from './store';
 import { useWeather } from './hooks/useWeather';
 import SearchBar from './components/SearchBar';
 import WeatherDisplay from './components/WeatherDisplay';
+import Footer from './components/Footer';
 
 const App = () => {
   const [validatedCity, setValidatedCity] = useState('');
@@ -23,11 +24,11 @@ const App = () => {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 py-6 px-4">
+    <div className="min-h-screen flex flex-col justify-between bg-gradient-to-br from-blue-50 to-blue-100 py-6 px-4">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Weather App</h1>
 
-        <SearchBar onSearch={handleSearch} searchHistory={searchHistory} />
+        <SearchBar loading={loading} onSearch={handleSearch} searchHistory={searchHistory} />
 
         <WeatherDisplay
           data={data}
@@ -35,6 +36,7 @@ const App = () => {
           error={error}
         />
       </div>
+      <Footer />
     </div>
   );
 };

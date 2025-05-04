@@ -3,11 +3,12 @@ import { useDispatch } from 'react-redux';
 import { fetchWeatherStart, clearSearchHistory } from '../store/weatherSlice';
 
 interface SearchBarProps {
+  loading: boolean;
   onSearch: (city: string) => void;
   searchHistory: string[];
 }
 
-const SearchBar = ({ onSearch, searchHistory }: SearchBarProps) => {
+const SearchBar = ({ loading, onSearch, searchHistory }: SearchBarProps) => {
   const [city, setCity] = useState('');
   const dispatch = useDispatch();
 
@@ -38,10 +39,10 @@ const SearchBar = ({ onSearch, searchHistory }: SearchBarProps) => {
         />
         <button
           type="submit"
-          className="px-4 py-2 cursor-pointer bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-          disabled={city.trim().length < 2}
+          className="disabled:opacity-50 px-4 py-2 cursor-pointer bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          disabled={city.trim().length < 2 || loading}
         >
-          Search
+          {loading ? <span className="inline-block mx-4 animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-blue-900"></span> : 'Search'}
         </button>
       </form>
 
@@ -61,15 +62,16 @@ const SearchBar = ({ onSearch, searchHistory }: SearchBarProps) => {
               <button
                 key={index}
                 onClick={() => onSearch(item)}
-                className="px-3 cursor-pointer py-1 text-sm bg-gray-100 rounded-full hover:bg-gray-200 transition-colors"
+                className={`px-3 cursor-pointer py-1 text-sm bg-gray-100 rounded-full hover:bg-gray-200 transition-colors `}
               >
                 {item}
               </button>
             ))}
           </div>
         </div>
-      )}
-    </div>
+      )
+      }
+    </div >
   );
 };
 

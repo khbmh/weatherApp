@@ -19,7 +19,7 @@ const WeatherIcon: FC<WeatherIconProps> = ({ iconCode, className = '' }) => {
     <img
       src={getIconUrl(iconCode)}
       alt="Weather icon"
-      className={`w-20 shadow-2xl bg-transparent rounded-full h-20 ${className}`}
+      className={`w-20 shadow-2xl backdrop-blur-3xl bg-black/10 rounded-full h-20 ${className}`}
       onError={(e) => {
         // Fallback if image fails to load
         (e.target as HTMLImageElement).style.display = 'none';
