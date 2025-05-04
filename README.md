@@ -35,6 +35,5 @@ A responsive weather application built with React.js, TypeScript, Redux, and Tai
 
 2. Make sure to create a `.env,local` file with following variables -
 
-```
-VITE_OPENWEATHER_API_KEY=
-```
+ ```bash
+VITE_API_KEY=
